@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --partition=highmem
+#SBATCH --mail-user=rachel.bainbridge@nih.gov
+#SBATCH --mail-type=END,FAIL
+#SBATCH --cpus-per-task=4
+
+
+plotHeatmap -m PND5EpiMesConDESAllATACPeaks.gz \
+-o PND5EpiMesConDESAllATACPeaksHeatmap.svg \
+--plotFileFormat svg \
+--sortUsingSamples 4 \
+--zMin 0.0000001 \
+--refPointLabel ATAC 
