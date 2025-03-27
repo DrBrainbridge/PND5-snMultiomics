@@ -116,7 +116,7 @@ DotPlot(object = PND5.CoDES.Epith, features = c('Hoxa10', 'Vim', 'Epcam', 'Krt18
 Clusters are separating entirely by treatment. I will need to subset and analyze DES and control separately.
 
 ```{r Epithelium Unintegrated}
-PND5.CoDES.Epith <- readRDS("/ddn/gs1/project/nextgen/post/williamsc5/NOV0595-Williams-Bainbridge/Rout_Con/ConDES_scratch/Epithelium/Unintegrated/PND5CoDESEpith.Rds")
+PND5.CoDES.Epith <- readRDS("PND5CoDESEpith.Rds")
 Idents(PND5.CoDES.Epith) <- 'Treatment'
 PND5.Co.Epith <- subset(PND5.CoDES.Epith, idents = 'Control')
 PND5.DES.Epith <- subset(PND5.CoDES.Epith, idents = 'HighDES')
