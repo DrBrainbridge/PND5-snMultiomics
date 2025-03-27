@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --partition=highmem
+#SBATCH --mail-user=rachel.bainbridge@nih.gov
+#SBATCH --mail-type=END,FAIL
+#SBATCH --cpus-per-task=4
+
+computeMatrix reference-point \
+--referencePoint center \
+-S atac_MeStroHD.pseudobulkATAC.bigWig \
+  atac_MeStroC.pseudobulkATAC.bigWig \
+  atac_EpiHD.pseudobulkATAC.bigWig \
+  atac_EpiC.pseudobulkATAC.bigWig \
+-R ERaMEDIP-DESspecregions.bed \
+--missingDataAsZero \
+-b 2000 \
+-a 2000 \
+-o PND5EpiMesConDESERaOverlapCoverage.gz \
+--outFileSortedRegions PND5EpiMesConDESERaOverlapRegions.bed
+
